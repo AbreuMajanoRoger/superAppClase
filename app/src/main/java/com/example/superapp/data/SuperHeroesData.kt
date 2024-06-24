@@ -8,7 +8,10 @@ data class SuperHeroesData(
     @SerializedName("results") val superheroes:  List<SuperHeroesItemResponse>
 )
 
-        data class SuperHeroesItemResponse(
-            @SerializedName("id") val superHeroesId:String,
-            @SerializedName("name") val name:String
-            )
+ data class SuperHeroesItemResponse(
+     @SerializedName("id") val superHeroesId:String,
+     @SerializedName("name") val name:String,
+     @SerializedName("image") val image:SuperheroImage
+ )
+
+data class SuperheroImage(@SerializedName("url") val url:String)
