@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         })
-            adapter = SuperHeroAdapter {superheroID-> navigateToDetail(superheroID) }
+            adapter = SuperHeroAdapter {navigateToDetail(it) }
             binding.reyclerView.setHasFixedSize(true)
             binding.reyclerView.layoutManager = LinearLayoutManager(this)
             binding.reyclerView.adapter = adapter
@@ -107,6 +107,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    // para navegar entre pantalllas necesitamos esta funcion
     private fun navigateToDetail(id:String){
         val intent = Intent(this, DetailSuperHeroActivity::class.java)
         intent.putExtra("EXTRA_ID", id)
