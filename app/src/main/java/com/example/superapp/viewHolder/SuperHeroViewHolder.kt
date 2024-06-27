@@ -1,7 +1,8 @@
-package com.example.superapp.data
+package com.example.superapp.viewHolder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.superapp.data.SuperHeroesItemResponse
 import com.example.superapp.databinding.ItemSuperheroBinding
 import com.squareup.picasso.Picasso
 

@@ -1,4 +1,4 @@
-package com.example.superapp
+package com.example.superapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,9 +9,8 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.superapp.data.ApiService
 import com.example.superapp.data.DetailSuperHeroActivity
-import com.example.superapp.data.SuperHeroAdapter
+import com.example.superapp.adapters.SuperHeroAdapter
 import com.example.superapp.data.SuperHeroesData
-import com.example.superapp.data.SuperHeroesItemResponse
 import com.example.superapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,7 +18,6 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     private fun getRetrofit(): Retrofit {
         return Retrofit
             .Builder()
-            .baseUrl("https://superheroapi.com/") // parte estatica o basica
+            .baseUrl("https://superheroapi.com/api/2a6069d82438c4aa43d0ee6399a75194/") // parte estatica o basica
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
